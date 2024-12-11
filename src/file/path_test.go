@@ -21,6 +21,7 @@ func TestPathToProject(t *testing.T) {
 		filepath.Join(root, "templates", "test.liquid"):              "templates/test.liquid",
 		filepath.Join(root, "locales", "test.liquid"):                "locales/test.liquid",
 		filepath.Join(root, "sections", "test.liquid"):               "sections/test.liquid",
+		filepath.Join(root, "blocks", "test.liquid"):                 "blocks/test.liquid",
 	}
 	for input, expected := range tests {
 		assert.Equal(t, expected, pathToProject(root, input))
@@ -42,6 +43,7 @@ func TestDirInProject(t *testing.T) {
 		filepath.Join(root, "node_modules"):        false,
 		filepath.Join(root, "pages"):               true,
 		filepath.Join(root, "pages/customers"):     true,
+		filepath.Join(root, "blocks"):              true,
 		filepath.Join(root, "sections"):            true,
 		filepath.Join(root, "snippets"):            true,
 		filepath.Join(root, "templates"):           true,
@@ -67,6 +69,7 @@ func TestPathInProject(t *testing.T) {
 		filepath.Join(root, "snippets", "test.liquid"):               true,
 		filepath.Join(root, "templates", "test.liquid"):              true,
 		filepath.Join(root, "locales", "test.liquid"):                true,
+		filepath.Join(root, "blocks", "test.liquid"):                 true,
 		filepath.Join(root, "sections", "test.liquid"):               true,
 	}
 	for input, expected := range tests {
