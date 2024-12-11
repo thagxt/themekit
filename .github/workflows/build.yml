@@ -15,8 +15,10 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.22' # Use the Go version you need
+          go-version: '1.22'
+
+      - name: List Files
+        run: ls -R
 
       - name: Build Theme Kit
-        run: |
-          go build -o themekit
+        run: go build -o themekit ./cmd/theme
