@@ -18,6 +18,7 @@ var (
 		"sections",
 		"snippets",
 		"templates",
+		"blocks",
 		"templates/customers",
 	}
 )
